@@ -1,19 +1,19 @@
 package rental;
 
-class Rental {
+public class Rental {
     Movie movie;
     int daysRented;
 
-    Rental(Movie movie, int daysRented) {
+    public Rental(Movie movie, int daysRented) {
         this.movie = movie;
         this.daysRented = daysRented;
     }
 
-    Movie movie() {
+    public Movie movie() {
         return movie;
     }
 
-    int daysRented() {
+    public int daysRented() {
         return daysRented;
     }
 }
