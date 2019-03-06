@@ -6,12 +6,22 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StatementTest {
 
+    static String expectedResult =
+            "山田様のレンタル明細\n" +
+                "\t新作\t900円\n" +
+                "\t子供\t150円\n" +
+                "\t一般\t200円\n" +
+                "合計金額 1250円\n" +
+                "獲得ポイント 4p";
+
     @Test
     @DisplayName("ステートメント出力")
-    void statement() {
+    void report() {
         Statement statement = new Statement(customer);
-        assertEquals(expect, statement.report());
+        assertEquals(expectedResult, statement.report());
     }
+
+    // 計算と出力の準備
 
     Customer customer;
 
@@ -20,7 +30,7 @@ class StatementTest {
     Movie regularMovie = new Movie("一般", Movie.MovieType.REGULAR);
 
     @BeforeEach
-    void setupData() {
+    void prepareFactDate() {
         Rental newReleaseRental = new Rental(newReleaseMovie, 3);
         Rental childrenRental = new Rental(childrenMovie, 2);
         Rental regularRental = new Rental(regularMovie, 1);
@@ -30,12 +40,4 @@ class StatementTest {
         customer.addRental(childrenRental);
         customer.addRental(regularRental);
     }
-
-    static String expect =
-            "山田様のレンタル明細\n" +
-            "\t新作\t900円\n" +
-            "\t子供\t150円\n" +
-            "\t一般\t200円\n" +
-            "合計金額 1250円\n" +
-            "獲得ポイント 4p";
 }
