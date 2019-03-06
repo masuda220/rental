@@ -5,7 +5,7 @@ public class Movie {
     public enum MovieType {
         REGULAR,
         NEW_RELEASE,
-        CHILDREN
+        CHILDREN;
     }
 
     String title;
