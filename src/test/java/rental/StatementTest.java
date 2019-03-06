@@ -9,9 +9,9 @@ class StatementTest {
     static String expectedResult =
             "山田様のレンタル明細\n" +
                 "\t新作\t900円\n" +
-                "\t子供\t150円\n" +
-                "\t一般\t200円\n" +
-                "合計金額 1250円\n" +
+                "\t一般\t500円\n" +
+                "\t子供\t550円\n" +
+                "合計金額 1950円\n" +
                 "獲得ポイント 4p";
 
     @Test
@@ -26,18 +26,19 @@ class StatementTest {
     Customer customer;
 
     Movie newReleaseMovie = new Movie("新作", Movie.MovieType.NEW_RELEASE);
-    Movie childrenMovie = new Movie("子供", Movie.MovieType.CHILDREN);
     Movie regularMovie = new Movie("一般", Movie.MovieType.REGULAR);
+    Movie childrenMovie = new Movie("子供", Movie.MovieType.CHILDREN);
 
     @BeforeEach
     void prepareFactDate() {
         Rental newReleaseRental = new Rental(newReleaseMovie, 3);
-        Rental childrenRental = new Rental(childrenMovie, 2);
-        Rental regularRental = new Rental(regularMovie, 1);
+        Rental regularRental = new Rental(regularMovie, 4);
+        Rental childrenRental = new Rental(childrenMovie, 6);
+
 
         customer = new Customer("山田");
         customer.addRental(newReleaseRental);
-        customer.addRental(childrenRental);
         customer.addRental(regularRental);
+        customer.addRental(childrenRental);
     }
 }

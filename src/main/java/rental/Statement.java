@@ -24,7 +24,7 @@ class Statement {
                     thisAmount += each.daysRented() * 300;
                     break;
                 case CHILDREN:
-                    thisAmount += 150;
+                    thisAmount += 100;
                     if (each.daysRented() > 3) thisAmount += (each.daysRented() - 3) * 150;
                     break;
             }
