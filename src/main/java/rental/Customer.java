@@ -3,23 +3,23 @@ package rental;
 import java.util.ArrayList;
 import java.util.List;
 
-class Customer {
+public class Customer {
     String name;
     List<Rental> rentals = new ArrayList<>();
 
-    Customer(String name) {
+    public Customer(String name) {
         this.name = name;
     }
 
-    void addRental(Rental rental) {
+    public void addRental(Rental rental) {
         rentals.add(rental);
     }
 
-    String name() {
+    public String name() {
         return name;
     }
 
-    List<Rental> rentals() {
+    public List<Rental> rentals() {
         return rentals;
     }
 }
