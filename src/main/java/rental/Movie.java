@@ -3,9 +3,9 @@ package rental;
 public class Movie {
 
     public enum MovieType {
-        REGULAR,
-        NEW_RELEASE,
-        CHILDREN;
+        一般,
+        新作,
+        子供;
     }
 
     String title;
